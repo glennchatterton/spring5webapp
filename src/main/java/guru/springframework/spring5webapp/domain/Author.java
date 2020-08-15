@@ -20,6 +20,10 @@ public class Author {
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
+    @ManyToMany(mappedBy = "authors")
+    private Set<Publisher> publishers = new HashSet<>();
+
+
     public Author() {
     }
 
@@ -58,6 +62,14 @@ public class Author {
 
     public void setBooks(Set<Book> books) {
         this.books = books;
+    }
+
+    public Set<Publisher> getPublishers() {
+        return publishers;
+    }
+
+    public void setPublishers(Set<Publisher> publishers) {
+        this.publishers = publishers;
     }
 
     @Override
